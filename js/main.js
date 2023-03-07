@@ -7,30 +7,20 @@ numberContDom.innerHTML += randomNumberList;
 
 setTimeout(function(){ 
     numberContDom.classList.add('d-none')}, 2000);
-/*
-setTimeout(esciIPrompt, 3000);
-    
-function esciIPrompt(){
-const promptNumberList = [];
-for(let i = 0; i < 5; i++){
-    let number = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
-    if(!promptNumberList.includes(number)){
-        console.log('hai perso')
+
+setTimeout(esciIPrompt(randomNumberList), 7000);
+
+/*    
+function esciIPrompt(listaNumeriRandomici){
+
+    for(let i = 0; i < 5; i++){
+        let number = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
+        if(!listaNumeriRandomici.includes(number)){
+            console.log('hai perso');
+        }
+        console.log('hai vinto');
     }
-    promptNumberList.push(number);
-}
-console.log('hai vinto');
 }*/
-
-
-
-
-
-
-
-
-
-
 
 
 
