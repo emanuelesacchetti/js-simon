@@ -21,8 +21,20 @@ function esciIPrompt(listaNumeriRandomici){
         console.log('hai vinto');
     }
 }*/
-
-
+function esciIPrompt (listaNumeriRandomici){
+    let valid = false;
+    let number;
+    do{
+        number = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
+    }while(!valid)
+    if(!listaNumeriRandomici.includes(number)){
+        valid = true
+        console.log('hai perso');
+    }else{
+        
+    }
+    if()
+}
 
 function genearateRandomNumber (min, max){
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
