@@ -1,51 +1,34 @@
-//debugger;
 const numberContDom = document.getElementById('numberContainer');
+const messageDom = document.getElementById('message');
+
 
 const randomNumberList = generateNumberList(); //creo lista di 5 numeri casuali
 console.log(randomNumberList);
- //creo una lista vuota per mettere i numeri dei prompt
 
 numberContDom.innerHTML += randomNumberList; //scrivo a schermo i numeri casuali
 
-setTimeout(function(){numberContDom.classList.add('d-none')}, 2000); //dopo 2 secondi i numeri casuali spariscono
-const promptNumberList = [];
-setTimeout(numeriPrompt(promptNumberList), 10000); //dopo 7 secondi escono i prompt
-console.log(promptNumberList);
-   
-function numeriPrompt(listaNumeriScelti){
-    //let listaNumeriScelti = [];
+setTimeout(function(){
+    numberContDom.classList.add('d-none')
+}, 4000); //dopo 2 secondi i numeri casuali spariscono
+
+let promptNumberList = [];
+setTimeout(function(){
+     
     for(let i = 0; i < 5; i++){
-        let number = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
-        listaNumeriScelti.push(number);
+        let promptNumber = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
+        promptNumberList.push(promptNumber);
     }
-    return listaNumeriScelti;
-}
-/*
-function esciIPrompt (listaNumeriRandomici){
-    let valid = false;
-    
-    let number;
+    console.log(promptNumberList);
 
-    //da correggere con il for chiedendo solo 5 volte
-    do{
-        number = parseInt(prompt('inserisci uno dei 5 numeri che ti ricordi'));
+    for ( let i = 0; i < 5; i++){
+        if(!randomNumberList.includes(promptNumberList[i])){
+            messageDom.innerHTML = 'hai perso';
+        }else{
+            messageDom.innerHTML = 'hai vinto';
+        }
+    }
+},5000); //dopo 10 secondi escono i prompt
 
-        
-
-    }while(!valid);
-    //questo !valid equivale finchè valid = false allora !valid = true*/
-
-    //fai con un ciclo tuo a piacere controlli quali numeri dell'utente sono diversi dai numeri indcati
-    // devi indicare poi il risultato nella pagina html
-
-    /*
-    if(!listaNumeriRandomici.includes(number)){
-        valid = true
-        console.log('hai perso');
-    }else{
-
-    }*/
-    
 
 
 function genearateRandomNumber (min, max){
