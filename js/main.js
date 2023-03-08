@@ -9,7 +9,7 @@ numberContDom.innerHTML += randomNumberList; //scrivo a schermo i numeri casuali
 
 setTimeout(function(){
     numberContDom.classList.add('d-none')
-}, 4000); //dopo 2 secondi i numeri casuali spariscono
+}, 4000); //dopo 4 secondi i numeri casuali spariscono
 
 let promptNumberList = [];
 setTimeout(function(){
@@ -27,7 +27,9 @@ setTimeout(function(){
             messageDom.innerHTML = 'hai vinto';
         }
     }
-},5000); //dopo 10 secondi escono i prompt
+
+
+},5000); //dopo 5 secondi escono i prompt
 
 
 
